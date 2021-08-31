@@ -110,7 +110,9 @@ A Catarina, jovem, frágil, linda, sorridente, e o seu filme poético fazem part
 </div>
 
 <div class="right right-images">
-
+  {% for item in page.historias %}
+  <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image" target="{{ item.index }}" data-bs-toggle="modal">
+  {% endfor %}
   <img src="images-stories/chair.jpg" alt="chair" class="stories-image chair showSingle" target='1' data-bs-toggle="modal" data-bs-target="#chairModal">
   <img src="images-stories/letter.jpg" alt="letter" class="stories-image letter showSingle" target='2' data-bs-toggle="modal" data-bs-target="#letterModal">
   <img src="images-stories/painting.jpg" alt="painting" class="stories-image painting showSingle" target='3' data-bs-toggle="modal" data-bs-target="#paintingModal">
@@ -145,7 +147,22 @@ A Catarina, jovem, frágil, linda, sorridente, e o seu filme poético fazem part
 
 
 
-
+{% for item in page.historias %}
+<div class="modal mobile" id="letterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="images-stories/letter.jpg" alt="chair" class="modal-img">
+        <br>
+        {{ item.historia }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 
 
 
@@ -277,3 +294,54 @@ A Catarina, jovem, frágil, linda, sorridente, e o seu filme poético fazem part
 </div>
 
 <div class="bottom-margin"></div>
+
+<script>
+
+$('.showSingle').click(function(event) {
+    if (window.matchMedia('(min-width: 600px)').matches) {
+      $('.stories-description').addClass('disable');
+      $('.targetDiv').addClass('disable');
+      $('#div' + $(this).attr('target')).removeClass('disable');
+      $('.showSingle').removeClass('white-border');
+      $(this).addClass('white-border');
+      event.stopPropagation();
+    } else {
+    }
+  });
+
+  $(window).click(function() {
+    if (window.matchMedia('(min-width: 600px)').matches) {
+      $('.stories-description').removeClass('disable');
+      $('.targetDiv').addClass('disable');
+      $('.showSingle').removeClass('white-border');
+    } else {
+    }
+  });
+
+  // Make the DIV element draggable:
+
+  $(function() {
+    if (window.matchMedia('(min-width: 600px)').matches) {
+        $(".stories-image").draggable();
+    } else {
+        //...
+    }
+
+  });
+
+  $('.modal').on('shown.bs.modal', function () {
+    var width = $(window).width();
+    if(width > 600){
+        $('.mobile').modal('hide')
+    }
+});
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+</script>
