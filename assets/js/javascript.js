@@ -9,7 +9,7 @@ function closeNav() {
   document.getElementById("Sidenav").style.display = "none";
 }
 
-/* Stories */
+/* Stories 
 
   $('.showSingle').click(function(event) {
     if (window.matchMedia('(min-width: 600px)').matches) {
@@ -58,3 +58,4 @@ function closeNav() {
   fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
+*/
