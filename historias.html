@@ -138,13 +138,13 @@ historias:
 
   
   {% for item in page.historias %}
-  <div id='div{{ item.index }}' class="targetDiv disable mb-4">{{ item.historia }}</div>
+  <div id='div{{ forloop.index }}' class="targetDiv disable mb-4">{{ item.historia }}</div>
   {% endfor %}
 </div>
 
 <div class="right right-images">
   {% for item in page.historias %}
-  <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image {{ item.label }} showSingle" target="{{ item.index + 1 }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}Modal">
+  <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image {{ item.label }} showSingle" target="{{ forloop.index }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}Modal">
   {% endfor %}
 </div>
 
