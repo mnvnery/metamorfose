@@ -81,46 +81,16 @@ historias:
       <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
   </div>
 
-  <p id='div1' class="targetDiv disable">Catarina
-<br><br>
-Conheci a Catarina na Escola de Música Nossa Senhora do Cabo, eu professora de piano, ela aluna de violino. Não era minha aluna, mas  a sua personalidade nunca me passou despercebida. A única ligação que eu tinha com ela era através da Ana Luísa Vieira, minha aluna e sua amiga. A Ana era já maior de idade, estudante no Técnico, alguém interessada e interessante na conversa e no conteúdo artístico e musical. A Ana era muito criativa e tinha um espírito muito livre, de artista, estudava engenharia eletrónica, algo que, pensava eu,  seria conflituoso com o caracter dela. No último ano fiquei muito contente por saber que ela tinha deixado o Técnico e que tinha entrado na Faculdade de Letras. Isso sim, era o lugar certo para o seu espírito. Na mesma sequência soube também que a Catarina se tinha candidatado a Belas Artes, mais um motivo de felicidade.
-<br><br>
-Um dia, no meio dos corredores da escola, soube que tinha falecido a mãe da Catarina…
-<br><br>
-Acompanhei sempre as novidades sobre a Catarina, os estudos no estrangeiro, as suas experiências, felizes, os primeiros passos no mundo do cinema, das artes gráficas, e para mim estas notícias foram sempre motivos de orgulho, mesmo não tendo nada a ver com o progresso profissional da Catarina.
-<br><br>
-Um dia ela teve a ideia de me recomendar para o filme da sua companheira, Cláudia Varejão. A Cláudia procurava pessoas familiares, ou numa relação íntima de amizade, de amor, e que fossem parecidos, como ponto de partida para o filme “Amor Fati”. Começaram os nossos encontros mais frequentes e mais dinâmicos. Entre muitas conversas com a Cláudia e a Catarina, ainda no âmbito do filme “Amor Fati”, recebi uma chamada da Catarina onde ela me falou, de forma emocionada e um pouco nervosa, da história da sua família, da sua mãe… ia começar o seu novo filme.
-<br><br>
-Assim entrei para mais um universo de sentimentos, do íntimo, do segredo, do mistério.
-A minha  participação, como pianista, no fime  “A Metamorfose dos Pássaros” é algo subtil, e esta delicadeza,  graças à escolha musical da  Catarina, incluiu-me no projecto artístico, mas antes de mais, na vida da Catarina, como uma pedrinha colocada no palácio das Memórias que eterniza a presença sagrada da sua Mãe.
-<br><br>
-Na minha opinião, A Metamorfose dos Pássaros é um livro em forma de filme. É um livro de poesia ilustrado por imagens, sons, vozes, sentidos, confissões, imaginação, uma profunda ligação emocional  marcado pela distância, quase do tamanho do universo. É um livro que, depois de ser lido, não mais sai de nós, fica para sempre entranhado nas moléculas e nos nervos do olhar, no território do inexplicável.
-<br><br>
-Estou grata pela oportunidade de estar onde estou, fazer aquilo que faço, ter as pessoas que tenho na minha vida.
-<br><br>
-A Catarina, jovem, frágil, linda, sorridente, e o seu filme poético fazem parte de mim, hoje e para sempre.
-<br><br><br><br>
-
-</p>
-  <p id='div2' class="targetDiv disable">Letter Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?</p>
-  <p id='div3' class="targetDiv disable">Painting Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?</p>
-  <p id='div4' class="targetDiv disable">Mug Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?</p>
-  <p id='div5' class="targetDiv disable">Pyramid Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?</p>
-  <p id='div6' class="targetDiv disable">Pyramids Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?</p>
-  <p id='div7' class="targetDiv disable">Wallet Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?</p>
+  
+  {% for item in page.historias %}
+  <div id='div{{ item.index }}' class="targetDiv disable mb-4">{{ item.historia }}</div>
+  {% endfor %}
 </div>
 
 <div class="right right-images">
   {% for item in page.historias %}
-  <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image" target="{{ item.index }}" data-bs-toggle="modal">
+  <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image {{ item.label }} showSingle" target="{{ item.index + 1 }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}Modal">
   {% endfor %}
-  <img src="images-stories/chair.jpg" alt="chair" class="stories-image chair showSingle" target='1' data-bs-toggle="modal" data-bs-target="#chairModal">
-  <img src="images-stories/letter.jpg" alt="letter" class="stories-image letter showSingle" target='2' data-bs-toggle="modal" data-bs-target="#letterModal">
-  <img src="images-stories/painting.jpg" alt="painting" class="stories-image painting showSingle" target='3' data-bs-toggle="modal" data-bs-target="#paintingModal">
-  <img src="images-stories/mug.jpg" alt="mug" class="stories-image mug showSingle" target='4' data-bs-toggle="modal" data-bs-target="#mugModal">
-  <img src="images-stories/pyramid.jpg" alt="pyramid" class="stories-image pyramid showSingle" target='5' data-bs-toggle="modal" data-bs-target="#pyramidModal">
-  <img src="images-stories/pyramids.jpg" alt="pyramids" class="stories-image pyramids showSingle" target='6' data-bs-toggle="modal" data-bs-target="#pyramidsModal">
-  <img src="images-stories/wallet.jpg" alt="wallet" class="stories-image wallet showSingle" target='7' data-bs-toggle="modal" data-bs-target="#walletModal">
 </div>
 
 
@@ -147,16 +117,16 @@ A Catarina, jovem, frágil, linda, sorridente, e o seu filme poético fazem part
 
 
 
-
+<!-- Mobile Modal -->
 {% for item in page.historias %}
-<div class="modal mobile" id="letterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal mobile" id="{{item.label}}Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <img src="images-stories/letter.jpg" alt="chair" class="modal-img">
+        <img src="{{ site.baseurl }}/{{ item.imagem }}" class="modal-img">
         <br>
         {{ item.historia }}
       </div>
@@ -164,135 +134,6 @@ A Catarina, jovem, frágil, linda, sorridente, e o seu filme poético fazem part
   </div>
 </div>
 {% endfor %}
-
-
-
-
-
-<!-- Modal -->
-<div class="modal mobile" id="chairModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="images-stories/chair.jpg" alt="chair" class="modal-img">
-        <br>
-        Catarina
-        <br><br>
-        Conheci a Catarina na Escola de Música Nossa Senhora do Cabo, eu professora de piano, ela aluna de violino. Não era minha aluna, mas  a sua personalidade nunca me passou despercebida. A única ligação que eu tinha com ela era através da Ana Luísa Vieira, minha aluna e sua amiga. A Ana era já maior de idade, estudante no Técnico, alguém interessada e interessante na conversa e no conteúdo artístico e musical. A Ana era muito criativa e tinha um espírito muito livre, de artista, estudava engenharia eletrónica, algo que, pensava eu,  seria conflituoso com o caracter dela. No último ano fiquei muito contente por saber que ela tinha deixado o Técnico e que tinha entrado na Faculdade de Letras. Isso sim, era o lugar certo para o seu espírito. Na mesma sequência soube também que a Catarina se tinha candidatado a Belas Artes, mais um motivo de felicidade.
-        <br><br>
-        Um dia, no meio dos corredores da escola, soube que tinha falecido a mãe da Catarina…
-        <br><br>
-        Acompanhei sempre as novidades sobre a Catarina, os estudos no estrangeiro, as suas experiências, felizes, os primeiros passos no mundo do cinema, das artes gráficas, e para mim estas notícias foram sempre motivos de orgulho, mesmo não tendo nada a ver com o progresso profissional da Catarina.
-        <br><br>
-        Um dia ela teve a ideia de me recomendar para o filme da sua companheira, Cláudia Varejão. A Cláudia procurava pessoas familiares, ou numa relação íntima de amizade, de amor, e que fossem parecidos, como ponto de partida para o filme “Amor Fati”. Começaram os nossos encontros mais frequentes e mais dinâmicos. Entre muitas conversas com a Cláudia e a Catarina, ainda no âmbito do filme “Amor Fati”, recebi uma chamada da Catarina onde ela me falou, de forma emocionada e um pouco nervosa, da história da sua família, da sua mãe… ia começar o seu novo filme.
-        <br><br>
-        Assim entrei para mais um universo de sentimentos, do íntimo, do segredo, do mistério.
-        A minha  participação, como pianista, no fime  “A Metamorfose dos Pássaros” é algo subtil, e esta delicadeza,  graças à escolha musical da  Catarina, incluiu-me no projecto artístico, mas antes de mais, na vida da Catarina, como uma pedrinha colocada no palácio das Memórias que eterniza a presença sagrada da sua Mãe.
-        <br><br>
-        Na minha opinião, A Metamorfose dos Pássaros é um livro em forma de filme. É um livro de poesia ilustrado por imagens, sons, vozes, sentidos, confissões, imaginação, uma profunda ligação emocional  marcado pela distância, quase do tamanho do universo. É um livro que, depois de ser lido, não mais sai de nós, fica para sempre entranhado nas moléculas e nos nervos do olhar, no território do inexplicável.
-        <br><br>
-        Estou grata pela oportunidade de estar onde estou, fazer aquilo que faço, ter as pessoas que tenho na minha vida.
-        <br><br>
-        A Catarina, jovem, frágil, linda, sorridente, e o seu filme poético fazem parte de mim, hoje e para sempre.
-        <br><br><br><br>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal mobile" id="letterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="images-stories/letter.jpg" alt="chair" class="modal-img">
-        <br>
-        letter Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal mobile" id="paintingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="images-stories/painting.jpg" alt="chair" class="modal-img">
-        <br>
-        painting Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal mobile" id="mugModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="images-stories/mug.jpg" alt="chair" class="modal-img">
-        <br>
-        Mug Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal mobile" id="pyramidModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="images-stories/pyramid.jpg" alt="chair" class="modal-img">
-        <br>
-        pyramid Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal mobile" id="pyramidsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="images-stories/pyramids.jpg" alt="chair" class="modal-img">
-        <br>
-        pyramids Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal mobile" id="walletModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="images-stories/wallet.jpg" alt="chair" class="modal-img">
-        <br>
-        Wallet Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore distinctio aut nam, magni consequuntur facere placeat praesentium labore ea veritatis? Possimus cupiditate maiores, dicta voluptates laudantium dignissimos magni expedita?
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="bottom-margin"></div>
 
