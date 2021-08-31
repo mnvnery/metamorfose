@@ -11,6 +11,11 @@ fields:
 - name: historias
   type: field_group_list
   fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
   - name: imagem
     type: file
     config:
@@ -31,4 +36,5 @@ fields:
     labelField: 
   label: Historias
 pages:
+- historias.html
 - historias.html
