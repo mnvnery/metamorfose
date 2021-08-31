@@ -5,3 +5,28 @@ fields:
 - type: text
   name: layout
   label: layout
+  config:
+    required: false
+  hidden: true
+- name: historias
+  type: field_group_list
+  fields:
+  - name: imagem
+    type: file
+    config:
+      maxSize: 64
+    label: Imagem
+  - name: historia
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Historia
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Historias
