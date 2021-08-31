@@ -30,6 +30,11 @@ fields:
       schema:
         format: html-blocks
     label: Historia
+  - name: label
+    type: text
+    config:
+      required: false
+    label: Label
   config:
     min: 
     max: 
