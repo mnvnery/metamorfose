@@ -148,7 +148,7 @@
   
   <img src="/metamorfose/assets/img/tota_imagem.webp" class="stories-image tota showSingle" target="21" data-bs-toggle="modal" data-bs-target="#totaModal">
   
-  <div class="images-margin mb-5 pb-5"></div>
+  <div class="images-margin mb-5"></div>
 </div>
 
 
@@ -535,8 +535,16 @@ $('.showSingle').click(function(event) {
   $('.stories-image').each(function(){
     y = Math.floor((Math.random() * 110) + 1);
     x = Math.floor((Math.random() * 35) + 1);
-    $(this).css("top", y + 'vh');
-    $(this).css("left", x + 'vw');
+    a = Math.floor((Math.random() * 60) + 1);
+    b = Math.floor((Math.random() * 80) + 1);
+    if (window.matchMedia('(min-width: 600px)').matches) {
+      $(this).css("top", y + 'vh');
+      $(this).css("left", x + 'vw');
+    } else {
+      $(this).css("top", a + 'vh');
+      $(this).css("left", b + 'vw');
+    }
+
   });
 
   $('.modal').on('shown.bs.modal', function () {
