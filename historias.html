@@ -698,7 +698,7 @@ historias:
   label: tota
 
 ---
-<img src="assets/img/elisa-costa-pinto_imagem-1.webp"><img src="assets/img/david-phelps_imagem.jpg"><img src="assets/img/barbara-assis-pacheco_imagem.webp"><img src="assets/img/antonio-pedro-lopes_imagem.webp"><img src="assets/img/antonina-graciosa_imagem.webp"><img src="assets/img/anita-carvalho_imagem.webp"><img src="assets/img/ana-vicente_imagem.webp"><img src="assets/img/alexandra-encarnacao_imagem.jpg"><img src="assets/img/elisa-costa-pinto_imagem-1.webp"><img src="assets/img/elisa-costa-pinto_imagem-2.webp"><img src="assets/img/fernando-roussado_imagem.webp"><img src="assets/img/joana-duarte_imagem_gerard-castello-lopes-portugal-1987.jpg"><img src="assets/img/josiane-mil-homens_imagem.webp"><img src="assets/img/mariana-sanchez-salvador_imagem.webp"><img src="assets/img/amotecatarina-1.gif"><img src="assets/img/amotecatarina-1-_1.gif"><img src="assets/img/pedro-figueiredo_imagem.webp"><div id="fb-root"></div>
+<div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0&appId=854621424892739&autoLogAppEvents=1" nonce="Ybu3L5GQ"></script>
 <!-- navbar -->
 
@@ -751,6 +751,7 @@ historias:
   {% for item in page.historias %}
   <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image {{ item.label }} showSingle" target="{{ forloop.index }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}Modal">
   {% endfor %}
+  <div class="images-margin mb-5 pb-5"></div>
 </div>
 
 
@@ -829,6 +830,16 @@ $('.showSingle').click(function(event) {
         //...
     }
 
+  });
+
+
+  // Random Position of images:
+
+  $('.stories-image').each(function(){
+    y = Math.floor((Math.random() * 110) + 1);
+    x = Math.floor((Math.random() * 35) + 1);
+    $(this).css("top", y + 'vh');
+    $(this).css("left", x + 'vw');
   });
 
   $('.modal').on('shown.bs.modal', function () {
