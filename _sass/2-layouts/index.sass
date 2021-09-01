@@ -131,6 +131,7 @@ p
 .stories-image 
     width: 12vw
     border: solid 1px black
+    position: absolute
 
 
 .chair 
@@ -352,6 +353,7 @@ p
         width: 100%
         border-top: 1px solid black
         background-color: #87D88C
+        z-index: 2
     
 
     .image-grid 
@@ -418,7 +420,12 @@ p
     .right-images 
         right: 0px
         width: 50%
+        height: 100vh
+        overflow-y: scroll
+        position: relative
         
+    .images-margin 
+        height: 150%
 
     .text-container 
         float: right
