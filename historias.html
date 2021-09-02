@@ -743,18 +743,41 @@ historias:
 
   
   {% for item in page.historias %}
-  <div id='div{{ forloop.index }}' class="targetDiv disable mb-4">{{ item.historia }}</div>
+  <div id='div{{ item.label }}' class="targetDiv disable mb-4">
+    {{ item.historia }}
+    <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
+  </div>
+
   {% endfor %}
 </div>
 
 <div class="right right-images">
   {% for item in page.historias %}
-  <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image {{ item.label }} showSingle" target="{{ forloop.index }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}Modal">
+  <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image {{ item.label }} showSingle" target="{{ item.label }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}">
   {% endfor %}
   <div class="images-margin mb-5"></div>
 </div>
 
 
+
+<!-- Mobile Modal -->
+{% for item in page.historias %}
+<div class="modal mobile" id="{{item.label}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="{{ site.baseurl }}/{{ item.imagem }}" class="modal-img">
+        <br>
+        {{ item.historia }}
+        <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 
 <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -774,27 +797,6 @@ historias:
     </div>
   </div>
 </div>
-
-
-
-
-<!-- Mobile Modal -->
-{% for item in page.historias %}
-<div class="modal mobile" id="{{item.label}}Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="{{ site.baseurl }}/{{ item.imagem }}" class="modal-img">
-        <br>
-        {{ item.historia }}
-      </div>
-    </div>
-  </div>
-</div>
-{% endfor %}
 
 <div class="bottom-margin"></div>
 
@@ -832,6 +834,32 @@ $('.showSingle').click(function(event) {
 
   });
 
+  if (window.matchMedia('(max-width: 600px)').matches) {
+  function openModalOnHash() {
+    if(window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        $('#'+hash).modal('show');
+      }
+    }
+
+    $(document).ready(function() {
+      openModalOnHash()
+    });
+  } else {
+    function openModalOnHash() {
+    if(window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        $('.stories-description').addClass('disable');
+        console.log(hash);
+        $('.'+hash).addClass('white-border');
+        $('#div'+hash).removeClass('disable');
+      }
+    }
+
+    $(document).ready(function() {
+      openModalOnHash()
+    });
+      }
 
   // Random Position of images:
 
@@ -839,7 +867,7 @@ $('.showSingle').click(function(event) {
     y = Math.floor((Math.random() * 110) + 1);
     x = Math.floor((Math.random() * 35) + 1);
     a = Math.floor((Math.random() * 60) + 1);
-    b = Math.floor((Math.random() * 80) + 1);
+    b = Math.floor((Math.random() * 77) + 1);
     if (window.matchMedia('(min-width: 600px)').matches) {
       $(this).css("top", y + 'vh');
       $(this).css("left", x + 'vw');
