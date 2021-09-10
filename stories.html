@@ -698,14 +698,14 @@ historias:
   label: tota
 
 ---
-<img src="assets/img/catarina_video.webp"><div id="fb-root"></div>
+<div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0&appId=854621424892739&autoLogAppEvents=1" nonce="Ybu3L5GQ"></script>
 <!-- navbar -->
 
 
 <div class="topnav" id="Topnav">
   <div class="menu-container">
-    <a href="index.html" class="active"><span>THE METAMORPHOSIS<br>OF BIRDS</span></a>
+    <a href="{{ site.baseurl }}/index-en" class="active"><span>THE METAMORPHOSIS<br>OF BIRDS</span></a>
     <a href="{{ site.baseurl }}/about">about</a>
     <a href="{{ site.baseurl }}/film">the film</a>
     <a href="{{ site.baseurl }}/stories">other stories</a>
@@ -717,27 +717,20 @@ historias:
 </div>
 
 <div id="Sidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="ri-close-line"></i></a>
   <a href="{{ site.baseurl }}/about">about</a>
   <a href="{{ site.baseurl }}/film">the film</a>
   <a href="{{ site.baseurl }}/stories">other stories</a>
-  <a href="{{ site.baseurl }}/historias"><span>pt -</span></a><a href="{{ site.baseurl }}/stories"><span> eng</span></a>
+  <div class="pt-eng"><a href="{{ site.baseurl }}/historias"><span>pt </span></a>&nbsp—&nbsp<a href="{{ site.baseurl }}/stories"><span> eng</span></a></div>
 </div>
 
 <!-- content -->
 
 <div class="left black-border">
   <div class="stories-description">
-    <p>Texto sobre a recolha de histórias de famílias: no texto devemos explicar
-      que as histórias aqui reunidas são de pessoas que já viram o filme e
-      que depois disso partilharam algum
-      episódio relacionado com as suas
-      famílias aqui. Essa história é sempre
-      acompanhada por uma fotografia
-      de alguém, de um objecto, de uma
-      pintura, aquilo que as pessoas sintam
-      que faz mais sentido. Aqui também teremos de ter o mail
-      (hiperlink) para o envio das histórias</p>
+    <p>The present stories are testimonies of several spectators who saw "The Metamorphosis of the Birds". These testimonies are echoes of the film's narrative and were gathered from the direct contact between the spectators and the film's director and production team. A large part of this archive comes from people, in a singular way, who so generously felt compelled to share their comments, stories, memories and images related to their own experiences in relation to the film.
+      <br><br>It is then from this community act that this archive emerges - where we can find the dialogue between personal and family experiences, memories and contexts. We truly appreciate the participation of everyone who was involved in the development of this page. These are gazes that so transversally make the film communicate with something that surpasses and expands it.
+      <br><br>This archive is live and dynamic. If you want to participate with your story, please contact lalalala@primeiraidade.pt.</p>
       <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
   </div>
 
@@ -866,7 +859,7 @@ $('.showSingle').click(function(event) {
   $('.stories-image').each(function(){
     y = Math.floor((Math.random() * 110) + 1);
     x = Math.floor((Math.random() * 35) + 1);
-    a = Math.floor((Math.random() * 60) + 1);
+    a = Math.floor((Math.random() * 58) + 1);
     b = Math.floor((Math.random() * 77) + 1);
     if (window.matchMedia('(min-width: 600px)').matches) {
       $(this).css("top", y + 'vh');

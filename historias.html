@@ -698,7 +698,7 @@ historias:
   label: tota
 
 ---
-<img src="assets/img/catarina_video.webp"><div id="fb-root"></div>
+<div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0&appId=854621424892739&autoLogAppEvents=1" nonce="Ybu3L5GQ"></script>
 <!-- navbar -->
 
@@ -717,27 +717,21 @@ historias:
 </div>
 
 <div id="Sidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="ri-close-line"></i></a>
   <a href="{{ site.baseurl }}/sobre">sobre</a>
   <a href="{{ site.baseurl }}/filme">o filme</a>
   <a href="{{ site.baseurl }}/historias">outras histórias</a>
-  <a href="{{ site.baseurl }}/historias"><span>pt -</span></a><a href="{{ site.baseurl }}/stories"><span> eng</span></a>
+  <div class="pt-eng"><a href="{{ site.baseurl }}/historias"><span>pt </span></a>&nbsp—&nbsp<a href="{{ site.baseurl }}/stories"><span> eng</span></a></div>
 </div>
 
 <!-- content -->
 
 <div class="left black-border">
   <div class="stories-description">
-    <p>Texto sobre a recolha de histórias de famílias: no texto devemos explicar
-      que as histórias aqui reunidas são de pessoas que já viram o filme e
-      que depois disso partilharam algum
-      episódio relacionado com as suas
-      famílias aqui. Essa história é sempre
-      acompanhada por uma fotografia
-      de alguém, de um objecto, de uma
-      pintura, aquilo que as pessoas sintam
-      que faz mais sentido. Aqui também teremos de ter o mail
-      (hiperlink) para o envio das histórias</p>
+    <p>As histórias aqui presentes são testemunhos de vários espectadores que viram "A Metamorfose dos Pássaros". Estes testemunhos são ecos da narrativa do filme e foram reunidos a partir do contacto directo entre os espectadores e a equipa de realização e de produção do filme. Grande parte deste arquivo provém de pessoas, a título singular, que tão generosamente se sentiram impelidas a partilhar os seus comentários, relatos, contos, memórias e imagens relacionadas com as suas próprias vivências em relação ao filme. 
+    <br><br>É então deste acto comunitário que surge este arquivo - onde podemos encontrar o diálogo entre experiências, recordações e contextos pessoais e familiares. Agradecemos a participação de todos os que se envolveram no desenvolvimento desta página. São olhares que tão transversalmente fazem o filme comunicar com algo que o ultrapassa e expande.
+      
+      <br><br>Este arquivo é vivo e dinâmico. Se quiser participar com a sua história, por favor entre em contacto para o endereço lalalala@primeiraidade.pt.</p>
       <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
   </div>
 
@@ -866,7 +860,7 @@ $('.showSingle').click(function(event) {
   $('.stories-image').each(function(){
     y = Math.floor((Math.random() * 110) + 1);
     x = Math.floor((Math.random() * 35) + 1);
-    a = Math.floor((Math.random() * 60) + 1);
+    a = Math.floor((Math.random() * 58) + 1);
     b = Math.floor((Math.random() * 77) + 1);
     if (window.matchMedia('(min-width: 600px)').matches) {
       $(this).css("top", y + 'vh');
