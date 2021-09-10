@@ -2,7 +2,7 @@
 
 @font-face { font-family: NEONATA; src: url("../fonts/NEONATA-Light.otf") format("opentype"); }
 
-body { margin: 0; background-color: #87D88C; font-family: Neuzeit; }
+body { margin: 0; background-color: #87D88C; font-family: Neuzeit, sans-serif; }
 
 #home { overflow-x: hidden; overflow-y: hidden; height: 100vh; }
 

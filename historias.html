@@ -817,6 +817,10 @@ $('.showSingle').click(function(event) {
     }
   });
 
+  $('.share-btn').click(function(event) { 
+    event.stopPropagation();
+  });
+
   // Make the DIV element draggable:
 
   $(function() {
