@@ -7,7 +7,6 @@ sections:
 - type: document
   path: stories.html
   label: Stories
-  match: "**/*"
 - type: document
   path: index.html
   label: Home
