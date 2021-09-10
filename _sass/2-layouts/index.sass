@@ -81,7 +81,7 @@ a:hover
     height: 100%
     width: 250px
     position: fixed
-    z-index: 1
+    z-index: 3
     top: 0
     right: 0
     float: right
@@ -97,6 +97,10 @@ a:hover
     text-decoration: none
     color: black
     display: block
+    font-size: 1.3em
+
+.ri-close-line
+    font-size: 30px
 
 
 .sidenav a:hover 
@@ -106,7 +110,7 @@ a:hover
 .sidenav .closebtn 
     position: absolute
     top: 0
-    right: 5px
+    right: 12px
     font-size: 20px
     margin-left: 50px
 
@@ -232,7 +236,6 @@ a:hover
     border-radius: 8px
     text-align: center
     padding-top: 3px
-    font-size: 0.8em
     margin-top: 3rem
 
 
@@ -276,7 +279,7 @@ a:hover
         text-align: left
 
     #leftImages, #rightImages
-        height: 50vh
+        height: 46vh
         object-fit: cover
         object-position: center
     
@@ -329,14 +332,37 @@ a:hover
 
     .black-border 
         padding: 4vw
+        margin-top: 8vh
 
     .share-btn 
         width: 15vw
 
     #exampleModal
-        width: 90%
+        width: 100%
         margin: 0 auto
-    
+
+    #exampleModal .modal-content 
+        margin: 0
+
+    .topnav
+        position: fixed
+        width: 100%
+        border: 1px solid black
+        border-bottom: 0px
+        top: 0
+        left: 0
+        z-index: 2
+
+    .trailer-container, .about-images-container, .image-grid
+        margin-top: 8vh
+
+    .pt-eng a 
+        padding: 0 !important
+    .pt-eng 
+        display: flex
+        align-items: center
+        padding-left: 32px
+
 
 @media screen and (max-height: 450px) 
     .sidenav 
@@ -346,6 +372,12 @@ a:hover
 
 
 @media screen and (min-width: 600px) 
+    .socials 
+        font-size: 1.1vw
+
+    .share-btn 
+        font-size: 1vw
+
     .mobile 
         display: none
     
@@ -382,11 +414,9 @@ a:hover
         width: 50vw
         height:auto
         object-fit: cover
-    
 
     .smaller-text 
         font-size: 0.95vw
-    
 
     /* film page */
     .page-flex-container 
@@ -394,17 +424,15 @@ a:hover
 
     
     .trailer-container 
-        width: 100vw
+        width: 100%
         float: left
         overflow-y: scroll
         height: 100vh
-    
 
     .credits-container 
-        width: 35vw
+        width: 45vw
         padding: 4vw
         font-size: 0.65rem
-        
 
     .black-border 
         border-right: solid 1px black
@@ -417,7 +445,7 @@ a:hover
         margin: 0
 
     .stories-description
-        font-size: 1.4rem
+        font-size: 1.1rem
     
 
     /* stories page */
