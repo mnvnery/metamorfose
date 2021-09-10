@@ -22,11 +22,11 @@ images_right:
 
 <div class="topnav" id="Topnav">
   <div class="menu-container">
-    <a href="index.html" class="active"><span>A METAMORFOSE <br>DOS PÁSSAROS</span></a>
-    <a href="{{ site.baseurl }}/sobre"><span class="pt">sobre</span><span class="en disable">about</span></a>
-    <a href="{{ site.baseurl }}/filme"><span class="pt">o filme</span><span class="en disable">the film</span></a>
-    <a href="{{ site.baseurl }}/historias"><span class="pt">outras histórias</span><span class="en disable">other stories</span></a>
-    <div style="padding: 14px 16px;" class="lang-flex desktop"><span id="portuguese"><a href="{{ site.baseurl }}/index"><u>pt</u>-</a></span><span id="english"><a href="{{ site.baseurl }}/index-en">eng</a></span></div>
+    <a href="index.html" class="active"><span>THE METAMORPHOSIS<br>OF BIRDS</span></a>
+    <a href="{{ site.baseurl }}/about">about</a>
+    <a href="{{ site.baseurl }}/film">the film</a>
+    <a href="{{ site.baseurl }}/stories">other stories</a>
+    <div style="padding: 14px 16px;" class="lang-flex desktop"><span id="portuguese"><a href="{{ site.baseurl }}/index">pt-</a></span><span id="english"><a href="{{ site.baseurl }}/index-en"><u>eng</u></a></span></div>
     <a href="javascript:void(0);" class="icon" onclick="openNav()">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
     </a>
@@ -35,10 +35,10 @@ images_right:
 
 <div id="Sidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{{ site.baseurl }}/sobre">sobre</a>
-  <a href="{{ site.baseurl }}/filme">o filme</a>
-  <a href="{{ site.baseurl }}/historias">outras histórias</a>
-  <a href="{{ site.baseurl }}/index"><span>pt -</span></a><a href="{{ site.baseurl }}/index-en"><span> eng</span></a>
+  <a href="{{ site.baseurl }}/about">about</a>
+  <a href="{{ site.baseurl }}/film">the film</a>
+  <a href="{{ site.baseurl }}/stories">other stories</a>
+  <a href="{{ site.baseurl }}/index"><span>pt </span></a>-<a href="{{ site.baseurl }}/index-en"><span> eng</span></a>
 </div>
 
 <!-- content -->
@@ -64,8 +64,8 @@ const sizeY = imageRight.length
 const y = Math.floor(sizeY*Math.random())
 
 $(document).ready(function(){
-  $('#leftImages').attr('src', imageLeft[x]);
-  $('#rightImages').attr('src', imageRight[y]);
+  $('#leftImages').attr('src', "{{site.baseurl}}/" + imageLeft[x]);
+  $('#rightImages').attr('src', "{{site.baseurl}}/" + imageRight[y]);
 });
 
 </script>

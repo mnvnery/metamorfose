@@ -24,6 +24,10 @@ a:hover { color: black; text-decoration: underline; }
 
 .topnav a { float: left; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none; }
 
+#english a, #portuguese a { padding: 0; }
+
+.lang-flex { display: flex; justify-content: space-between; align-items: center; }
+
 .topnav a:hover { color: black; }
 
 .topnav a.active { background-color: #87D88C; color: black; font-family: NEONATA, sans-serif; letter-spacing: 0.18em; text-align: left; -webkit-text-stroke: 1.5px black; line-height: 1.5; padding: 9px 16px; }
