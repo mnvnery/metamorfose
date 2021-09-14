@@ -1,0 +1,28 @@
+---
+label: Film Links
+hide_body: true
+fields:
+- type: text
+  name: layout
+  label: layout
+  hidden: true
+- name: links
+  type: field_group_list
+  fields:
+  - name: descricao
+    type: text
+    config:
+      required: false
+    label: Descrição
+  - name: link
+    type: text
+    config:
+      required: false
+    label: Link
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Links
+pages:
+- filme.html
