@@ -781,7 +781,7 @@ historias:
       {{ item.video_extra }}
     {% endif %}
     {{ item.historia }}
-    <div class="share-btn stories-share" data-bs-toggle="modal" data-bs-target="#storyModal" data-label="{{ item.label }}">share</div>
+    <div class="share-btn stories-share btn-flex" data-label="{{ item.label }}">copiar link para partilha <i class="copy-icon ri-file-copy-line"></i></div>
   </div>
 
   {% endfor %}
@@ -827,25 +827,6 @@ historias:
         <div class="socials twitter d-flex align-items-center"><i class="ri-twitter-fill"></i><p class="m-1 mt-2"><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}">Tweet</a></p></div>
 
         <div class="socials email d-flex align-items-center"><i class="ri-mail-fill"></i><p class="m-1 mt-2"><a href="mailto:?subject={{ page.title }}&amp;body={{ site.url }}{{ site.baseurl }}{{ page.url }}">Email</a></p></div>
-
-      </div>
-      <div class="m-4"></div>
-    </div>
-  </div>
-</div>
-
-<div class="modal" id="storyModal" tabindex="-1" aria-labelledby="storyModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body d-flex justify-content-around">
-        <div class="socials facebook d-flex align-items-center"><i class="ri-facebook-fill"></i><p class="m-1 mt-2"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" class="social-share-link">Share</a></p></div>
-
-        <div class="socials twitter d-flex align-items-center"><i class="ri-twitter-fill"></i><p class="m-1 mt-2"><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" class="social-share-link">Tweet</a></p></div>
-
-        <div class="socials email d-flex align-items-center"><i class="ri-mail-fill"></i><p class="m-1 mt-2"><a href="mailto:?subject={{ page.title }}&amp;body={{ site.url }}{{ site.baseurl }}{{ page.url }}" class="social-share-link">Email</a></p></div>
 
       </div>
       <div class="m-4"></div>
@@ -963,7 +944,12 @@ $('.showSingle').click(function(event) {
 });
 
 $('.stories-share').click(function() {
-  var link = $('.social-share-link');
-  link.attr('href', link.attr('href') + '#' + $(this).data('label'));
+  navigator.clipboard.writeText('{{ site.url }}{{ site.baseurl }}{{ page.url }}#' + $(this).data('label'));
+  $('.copy-icon').removeClass('ri-file-copy-line');
+  $('.copy-icon').addClass('ri-check-line');
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 </script>
