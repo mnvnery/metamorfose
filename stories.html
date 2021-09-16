@@ -734,8 +734,6 @@ historias:
   video_extra: ''
 
 ---
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0&appId=854621424892739&autoLogAppEvents=1" nonce="Ybu3L5GQ"></script>
 <!-- navbar -->
 
 
@@ -780,7 +778,7 @@ historias:
       {{ item.video_extra }}
     {% endif %}
     {{ item.historia }}
-    <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
+    <div class="share-btn stories-share btn-flex" data-label="{{ item.label }}">copy story link to share<i class="copy-icon ri-file-copy-line"></i></div>
   </div>
 
   {% endfor %}
@@ -792,7 +790,6 @@ historias:
   {% endfor %}
   <div class="images-margin mb-5"></div>
 </div>
-
 
 
 <!-- Mobile Modal -->
@@ -838,95 +835,117 @@ historias:
 
 <script>
 
-$('.showSingle').click(function(event) {
-    if (window.matchMedia('(min-width: 600px)').matches) {
-      $('.stories-description').addClass('disable');
-      $('.targetDiv').addClass('disable');
-      $('#div' + $(this).attr('target')).removeClass('disable');
-      $('.showSingle').removeClass('white-border');
-      $(this).addClass('white-border');
-      event.stopPropagation();
-    } else {
-    }
-  });
-
-  $(window).click(function() {
-    if (window.matchMedia('(min-width: 600px)').matches) {
-      $('.stories-description').removeClass('disable');
-      $('.targetDiv').addClass('disable');
-      $('.showSingle').removeClass('white-border');
-    } else {
-    }
-  });
-
-  // Make the DIV element draggable:
-
-  $(function() {
-    if (window.matchMedia('(min-width: 600px)').matches) {
-        $(".stories-image").draggable();
-    } else {
-        //...
-    }
-
-  });
-
-  if (window.matchMedia('(max-width: 600px)').matches) {
-  function openModalOnHash() {
-    if(window.location.hash) {
-        var hash = window.location.hash.substring(1);
-        $('#'+hash).modal('show');
-      }
-    }
-
-    $(document).ready(function() {
-      openModalOnHash()
-    });
-  } else {
-    function openModalOnHash() {
-    if(window.location.hash) {
-        var hash = window.location.hash.substring(1);
+  $('.showSingle').click(function(event) {
+      if (window.matchMedia('(min-width: 600px)').matches) {
         $('.stories-description').addClass('disable');
-        console.log(hash);
-        $('.'+hash).addClass('white-border');
-        $('#div'+hash).removeClass('disable');
+        $('.targetDiv').addClass('disable');
+        $('#div' + $(this).attr('target')).removeClass('disable');
+        $('.showSingle').removeClass('white-border');
+        $(this).addClass('white-border');
+        event.stopPropagation();
+      } else {
       }
-    }
-
-    $(document).ready(function() {
-      openModalOnHash()
     });
+  
+    $(window).click(function() {
+      if (window.matchMedia('(min-width: 600px)').matches) {
+        $('.stories-description').removeClass('disable');
+        $('.targetDiv').addClass('disable');
+        $('.showSingle').removeClass('white-border');
+      } else {
       }
-
-  // Random Position of images:
-
-  $('.stories-image').each(function(){
-    y = Math.floor((Math.random() * 110) + 1);
-    x = Math.floor((Math.random() * 35) + 1);
-    a = Math.floor((Math.random() * 58) + 1);
-    b = Math.floor((Math.random() * 77) + 1);
-    if (window.matchMedia('(min-width: 600px)').matches) {
-      $(this).css("top", y + 'vh');
-      $(this).css("left", x + 'vw');
+    });
+  
+    $('.share-btn').click(function(event) { 
+      event.stopPropagation();
+    });
+  
+    // Make the DIV element draggable:
+  
+    $(function() {
+      if (window.matchMedia('(min-width: 600px)').matches) {
+          $(".stories-image").draggable();
+      } else {
+          //...
+      }
+  
+    });
+  
+    if (window.matchMedia('(max-width: 600px)').matches) {
+    function openModalOnHash() {
+      if(window.location.hash) {
+          var hash = window.location.hash.substring(1);
+          $('#'+hash).modal('show');
+        }
+      }
+  
+      $(document).ready(function() {
+        openModalOnHash()
+      });
     } else {
-      $(this).css("top", a + 'vh');
-      $(this).css("left", b + 'vw');
-    }
-
+      function openModalOnHash() {
+      if(window.location.hash) {
+          var hash = window.location.hash.substring(1);
+          $('.stories-description').addClass('disable');
+          console.log(hash);
+          $('.'+hash).addClass('white-border');
+          $('#div'+hash).removeClass('disable');
+        }
+      }
+  
+      $(document).ready(function() {
+        openModalOnHash()
+      });
+        }
+  
+    // Random Position of images:
+  
+    $('.stories-image').each(function(){
+      y = Math.floor((Math.random() * 110) + 1);
+      x = Math.floor((Math.random() * 35) + 1);
+      a = Math.floor((Math.random() * 65) + 1);
+      b = Math.floor((Math.random() * 77) + 1);
+      if (window.matchMedia('(min-width: 600px)').matches) {
+        $(this).css("top", y + 'vh');
+        $(this).css("left", x + 'vw');
+      } else {
+        $(this).css("top", a + 'vh');
+        $(this).css("left", b + 'vw');
+      }
+  
+    });
+  
+  
+    $('.stories-btn').click(function() { 
+      $('.stories-image').each(function(){
+        y = Math.floor((Math.random() * 110) + 1);
+        x = Math.floor((Math.random() * 35) + 1);
+        a = Math.floor((Math.random() * 58) + 1);
+        b = Math.floor((Math.random() * 77) + 1);
+        if (window.matchMedia('(min-width: 600px)').matches) {
+          $(this).css("top", y + 'vh');
+          $(this).css("left", x + 'vw');
+        } else {
+          $(this).css("top", a + 'vh');
+          $(this).css("left", b + 'vw');
+        }
+      });
+    });
+  
+    $('.modal').on('shown.bs.modal', function () {
+      var width = $(window).width();
+      if(width > 600){
+          $('.mobile').modal('hide')
+      }
   });
-
-  $('.modal').on('shown.bs.modal', function () {
-    var width = $(window).width();
-    if(width > 600){
-        $('.mobile').modal('hide')
-    }
-});
-
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-</script>
+  
+  $('.stories-share').click(function() {
+    navigator.clipboard.writeText('{{ site.url }}{{ site.baseurl }}{{ page.url }}#' + $(this).data('label'));
+    $('.copy-icon').removeClass('ri-file-copy-line');
+    $('.copy-icon').addClass('ri-check-line');
+  });
+  
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  </script>
