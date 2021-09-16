@@ -768,7 +768,7 @@ historias:
     <p>As histórias aqui presentes são testemunhos de vários espectadores que viram "A Metamorfose dos Pássaros". Estes testemunhos são ecos da narrativa do filme e foram reunidos a partir do contacto directo entre os espectadores e a equipa de realização e de produção do filme. Grande parte deste arquivo provém de pessoas, a título singular, que tão generosamente se sentiram impelidas a partilhar os seus comentários, relatos, contos, memórias e imagens relacionadas com as suas próprias vivências em relação ao filme. 
     <br><br>É então deste acto comunitário que surge este arquivo - onde podemos encontrar o diálogo entre experiências, recordações e contextos pessoais e familiares. Agradecemos a participação de todos os que se envolveram no desenvolvimento desta página. São olhares que tão transversalmente fazem o filme comunicar com algo que o ultrapassa e expande.
       
-      <br><br>Este arquivo é vivo e dinâmico. Se quiser participar com a sua história, por favor entre em contacto para o endereço lalalala@primeiraidade.pt.</p>
+      <br><br>Este arquivo é vivo e dinâmico. Se quiser participar com a sua história, por favor entre em contacto para o endereço a.metamorfose.dos.passaros@primeira-idade.pt.</p>
       <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
   </div>
 
@@ -777,6 +777,9 @@ historias:
   <div id='div{{ item.label }}' class="targetDiv disable mb-4">
     {% if item.extra_snippet != '' %}
       <img src="{{ site.baseurl }}/{{ item.extra_snippet }}" class="extra-snippet">
+    {% endif %}
+    {% if item.video_extra != '' %}
+      {{ item.video_extra }}
     {% endif %}
     {{ item.historia }}
     <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
