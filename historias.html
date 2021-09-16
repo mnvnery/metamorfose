@@ -502,7 +502,7 @@ historias:
   imagem: assets/img/amotecatarina-1-_1.gif
   historia: <p>"meu amor, minha casa no mar"</p>
   label: anonimo
-  extra_snippet: <img src="{{ site.baseurl }}/assets/img/amotecatarina-1-_1.gif">
+  extra_snippet: assets/img/amotecatarina-1-_1.gif
 - title: Mariana Sanchez Salvador
   imagem: assets/img/mariana-sanchez-salvador_imagem.webp
   historia: "<p><strong>A metamorfose</strong></p><p></p><p>“Vou fazer um filme!”</p><p>“Um
@@ -674,7 +674,7 @@ historias:
   historia: <p>"O horizonte além do plano focal, conjuga uma imagem real e invertida."</p><p>Tomás
     Queiroz</p>
   label: tomas
-  extra_snippet: <img src="{{ site.baseurl }}/assets/img/tomas-queiroz_imagem.webp">
+  extra_snippet: assets/img/tomas-queiroz_imagem.webp
 - imagem: assets/img/tota_imagem.webp
   historia: "<p><em>metamorfose da pássara</em></p><p></p><p>o dia não é exato, simplesmente
     vai acontecendo. as calças deixam de apertar, as mamas dão forma às camisolas,
@@ -754,7 +754,7 @@ historias:
   {% for item in page.historias %}
   <div id='div{{ item.label }}' class="targetDiv disable mb-4">
     {% if item.extra_snippet != '' %}
-      {{ item.extra_snippet }}
+      <img src="{{ site.baseurl }}/{{ item.extra_snippet }}" class="extra-snippet">
     {% endif %}
     {{ item.historia }}
     <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
