@@ -44,6 +44,15 @@ fields:
       schema:
         format: markdown
     label: Imagem Extra
+  - name: video_extra
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Video Extra
   config:
     min: 
     max: 
