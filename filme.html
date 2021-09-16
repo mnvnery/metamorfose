@@ -139,11 +139,11 @@ links:
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body d-flex justify-content-around">
-          <div class="socials facebook d-flex align-items-center"><i class="ri-facebook-fill"></i><p class="m-1 mt-2">Share</p></div>
+          <div class="socials facebook d-flex align-items-center"><i class="ri-facebook-fill"></i><p class="m-1 mt-2"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">Share</a></p></div>
+
+          <div class="socials twitter d-flex align-items-center"><i class="ri-twitter-fill"></i><p class="m-1 mt-2"><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">Tweet</a></p></div>
   
-          <div class="socials twitter d-flex align-items-center"><i class="ri-twitter-fill"></i><p class="m-1 mt-2">Tweet</p></div>
-  
-          <div class="socials email d-flex align-items-center"><i class="ri-mail-fill"></i><p class="m-1 mt-2">Email</p></div>
+          <div class="socials email d-flex align-items-center"><i class="ri-mail-fill"></i><p class="m-1 mt-2"><a href="mailto:?subject={{ page.title }}&amp;body={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">Email</a></p></div>
   
         </div>
         <div class="m-4"></div>
