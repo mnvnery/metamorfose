@@ -35,6 +35,15 @@ fields:
     config:
       required: false
     label: Label
+  - name: extra_snippet
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Imagem Extra
   config:
     min: 
     max: 
