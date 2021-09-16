@@ -759,7 +759,6 @@ title: Histórias - A Metamorfose dos Pássaros
 </div>
 
 <!-- content -->
-
 <div class="left black-border">
   <div class="stories-description">
     <p>As histórias aqui presentes são testemunhos de vários espectadores que viram "A Metamorfose dos Pássaros". Estes testemunhos são ecos da narrativa do filme e foram reunidos a partir do contacto directo entre os espectadores e a equipa de realização e de produção do filme. Grande parte deste arquivo provém de pessoas, a título singular, que tão generosamente se sentiram impelidas a partilhar os seus comentários, relatos, contos, memórias e imagens relacionadas com as suas próprias vivências em relação ao filme. 
@@ -768,7 +767,6 @@ title: Histórias - A Metamorfose dos Pássaros
       <br><br>Este arquivo é vivo e dinâmico. Se quiser participar com a sua história, por favor entre em contacto para o endereço a.metamorfose.dos.passaros@primeira-idade.pt.</p>
       <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
   </div>
-
   
   {% for item in page.historias %}
   <div id='div{{ item.label }}' class="targetDiv disable mb-4">
@@ -779,21 +777,16 @@ title: Histórias - A Metamorfose dos Pássaros
       {{ item.video_extra }}
     {% endif %}
     {{ item.historia }}
-    <div class="share-btn stories-share" data-bs-toggle="modal" data-bs-target="#storyModal" data-label="{{ item.label }}">share</div>
+    <div class="share-btn stories-share btn-flex" data-label="{{ item.label }}">copiar link para partilha <i class="copy-icon ri-file-copy-line"></i></div>
   </div>
-
   {% endfor %}
 </div>
-
 <div class="right right-images">
   {% for item in page.historias %}
   <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image {{ item.label }} showSingle" target="{{ item.label }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}">
   {% endfor %}
   <div class="images-margin mb-5"></div>
 </div>
-
-
-
 <!-- Mobile Modal -->
 {% for item in page.historias %}
 <div class="modal mobile" id="{{item.label}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -806,13 +799,13 @@ title: Histórias - A Metamorfose dos Pássaros
         <img src="{{ site.baseurl }}/{{ item.imagem }}" class="modal-img">
         <br>
         {{ item.historia }}
+        <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
         <div class="share-btn stories-share btn-flex" data-label="{{ item.label }}">copiar link para partilha <i class="copy-icon ri-file-copy-line"></i></div>
       </div>
     </div>
   </div>
 </div>
 {% endfor %}
-
 <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -820,10 +813,13 @@ title: Histórias - A Metamorfose dos Pássaros
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex justify-content-around">
+        <div class="socials facebook d-flex align-items-center"><i class="ri-facebook-fill"></i><p class="m-1 mt-2"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}">Share</a></p></div>
         <div class="socials facebook d-flex align-items-center"><i class="ri-facebook-fill"></i><p class="m-1 mt-2"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">Share</a></p></div>
 
+        <div class="socials twitter d-flex align-items-center"><i class="ri-twitter-fill"></i><p class="m-1 mt-2"><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}">Tweet</a></p></div>
         <div class="socials twitter d-flex align-items-center"><i class="ri-twitter-fill"></i><p class="m-1 mt-2"><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">Tweet</a></p></div>
 
+        <div class="socials email d-flex align-items-center"><i class="ri-mail-fill"></i><p class="m-1 mt-2"><a href="mailto:?subject={{ page.title }}&amp;body={{ site.url }}{{ site.baseurl }}{{ page.url }}">Email</a></p></div>
         <div class="socials email d-flex align-items-center"><i class="ri-mail-fill"></i><p class="m-1 mt-2"><a href="mailto:?subject={{ page.title }}&amp;body={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank">Email</a></p></div>
 
       </div>
@@ -831,31 +827,9 @@ title: Histórias - A Metamorfose dos Pássaros
     </div>
   </div>
 </div>
-
-<div class="modal" id="storyModal" tabindex="-1" aria-labelledby="storyModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body d-flex justify-content-around">
-        <div class="socials facebook d-flex align-items-center"><i class="ri-facebook-fill"></i><p class="m-1 mt-2"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" class="social-share-link">Share</a></p></div>
-
-        <div class="socials twitter d-flex align-items-center"><i class="ri-twitter-fill"></i><p class="m-1 mt-2"><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" class="social-share-link">Tweet</a></p></div>
-
-        <div class="socials email d-flex align-items-center"><i class="ri-mail-fill"></i><p class="m-1 mt-2"><a href="mailto:?subject={{ page.title }}&amp;body={{ site.url }}{{ site.baseurl }}{{ page.url }}" class="social-share-link">Email</a></p></div>
-
-      </div>
-      <div class="m-4"></div>
-    </div>
-  </div>
-</div>
-
 <div class="stories-btn mobile">mais histórias</div>
 <div class="bottom-margin"></div>
-
 <script>
-
 $('.showSingle').click(function(event) {
     if (window.matchMedia('(min-width: 600px)').matches) {
       $('.stories-description').addClass('disable');
@@ -867,7 +841,6 @@ $('.showSingle').click(function(event) {
     } else {
     }
   });
-
   $(window).click(function() {
     if (window.matchMedia('(min-width: 600px)').matches) {
       $('.stories-description').removeClass('disable');
@@ -876,22 +849,17 @@ $('.showSingle').click(function(event) {
     } else {
     }
   });
-
   $('.share-btn').click(function(event) { 
     event.stopPropagation();
   });
-
   // Make the DIV element draggable:
-
   $(function() {
     if (window.matchMedia('(min-width: 600px)').matches) {
         $(".stories-image").draggable();
     } else {
         //...
     }
-
   });
-
   if (window.matchMedia('(max-width: 600px)').matches) {
   function openModalOnHash() {
     if(window.location.hash) {
@@ -899,7 +867,6 @@ $('.showSingle').click(function(event) {
         $('#'+hash).modal('show');
       }
     }
-
     $(document).ready(function() {
       openModalOnHash()
     });
@@ -913,14 +880,11 @@ $('.showSingle').click(function(event) {
         $('#div'+hash).removeClass('disable');
       }
     }
-
     $(document).ready(function() {
       openModalOnHash()
     });
       }
-
   // Random Position of images:
-
   $('.stories-image').each(function(){
     y = Math.floor((Math.random() * 110) + 1);
     x = Math.floor((Math.random() * 35) + 1);
@@ -933,10 +897,7 @@ $('.showSingle').click(function(event) {
       $(this).css("top", a + 'vh');
       $(this).css("left", b + 'vw');
     }
-
   });
-
-
   $('.stories-btn').click(function() { 
     $('.stories-image').each(function(){
       y = Math.floor((Math.random() * 110) + 1);
@@ -952,16 +913,15 @@ $('.showSingle').click(function(event) {
       }
     });
   });
-
   $('.modal').on('shown.bs.modal', function () {
     var width = $(window).width();
     if(width > 600){
         $('.mobile').modal('hide')
     }
 });
-
 $('.stories-share').click(function() {
-  var link = $('.social-share-link');
-  link.attr('href', link.attr('href') + '#' + $(this).data('label'));
+  navigator.clipboard.writeText('{{ site.url }}{{ site.baseurl }}{{ page.url }}#' + $(this).data('label'));
+  $('.copy-icon').removeClass('ri-file-copy-line');
+  $('.copy-icon').addClass('ri-check-line');
 });
 </script>
