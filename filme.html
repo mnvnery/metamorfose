@@ -124,10 +124,10 @@ links:
   
     <div class="links-container mt-5">
       <h6>LINKS</h6>
-      <p><a href="www.facebook.com/themetamorphosisofbirds">Facebook</a></p>
-      <p><a href="https://www.instagram.com/a_metamorfose_dos_passaros/">Instagram</a></p>
+      <p><a href="https://www.facebook.com/themetamorphosisofbirds" target="_blank">Facebook</a></p>
+      <p><a href="https://www.instagram.com/a_metamorfose_dos_passaros/" target="_blank">Instagram</a></p>
       {% for item in page.links %}
-      <p><a href="{{ item.link }}">{{ item.descricao }}</a></p>
+      <p><a href="{{ item.link }}" target="_blank">{{ item.descricao }}</a></p>
       {% endfor %}
     </div>
     <div class="share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">share</div>
