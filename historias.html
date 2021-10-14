@@ -1007,7 +1007,7 @@ title: Histórias - A Metamorfose dos Pássaros
   {% for item in page.historias %}
   <div id='div{{ item.label }}' class="targetDiv disable mb-4">
     {% if item.extra_snippet != '' %}
-      <img src="{{ site.baseurl }}/{{ item.extra_snippet }}" class="extra-snippet">
+      <img src="{{ site.baseurl }}/{{ item.extra_snippet }}" class="extra-snippet" alt="story image">
     {% endif %}
     {% if item.video_extra != '' %}
       {{ item.video_extra }}
@@ -1019,7 +1019,7 @@ title: Histórias - A Metamorfose dos Pássaros
 </div>
 <div class="right right-images">
   {% for item in page.historias %}
-  <img src="{{ site.baseurl }}/{{ item.imagem }}" class="stories-image {{ item.label }} showSingle" target="{{ item.label }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}">
+  <img src="{{ site.baseurl }}/{{ item.imagem }}" alt="Story Image" class="stories-image {{ item.label }} showSingle" target="{{ item.label }}" data-bs-toggle="modal" data-bs-target="#{{item.label}}">
   {% endfor %}
   <div class="images-margin mb-5"></div>
 </div>
@@ -1032,7 +1032,7 @@ title: Histórias - A Metamorfose dos Pássaros
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <img src="{{ site.baseurl }}/{{ item.imagem }}" class="modal-img">
+        <img src="{{ site.baseurl }}/{{ item.imagem }}" class="modal-img" alt="Modal Story Image">
         <br>
         {{ item.historia }}
         <div class="share-btn stories-share btn-flex" data-label="{{ item.label }}">copiar link para partilha <i class="copy-icon ri-file-copy-line"></i></div>
